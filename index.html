@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>Global Poverty Tracker</title>
+
+<meta
+name="description"
+content="A World Bank data dashboard tracking poverty around the world."
+>
+
+<link rel="stylesheet" href="style.css">
+
+<link
+rel="manifest"
+href="manifest.json"
+>
+
+<script
+src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js">
+</script>
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<div class="hero-inner">
+
+<div class="brand">
+
+<img
+src="logo.png"
+class="logo"
+alt="Global Poverty Tracker logo"
+>
+
+<div>
+
+<h1>Global Poverty Tracker</h1>
+
+<p>
+Tracking poverty trends around the world using
+World Bank Poverty and Inequality Platform data.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<section class="notice">
+
+<strong>Data integrity:</strong>
+
+This dashboard uses poverty estimates from the
+World Bank Poverty and Inequality Platform (PIP).
+Missing values are shown as unavailable rather than
+being replaced with invented numbers.
+
+</section>
+
+
+<section class="selector-card">
+
+<h2>Select a country</h2>
+
+<div class="selector-row">
+
+<select id="country">
+
+<option value="">
+Loading countries...
+</option>
+
+</select>
+
+<button id="refresh">
+Refresh Data
+</button>
+
+</div>
+
+</section>
+
+
+<div
+id="error"
+class="error hidden">
+</div>
+
+
+<section class="cards">
+
+
+<div class="card">
+
+<span>Latest Poverty Rate</span>
+
+<strong id="rate">—</strong>
+
+<small id="rateYear">—</small>
+
+</div>
+
+
+<div class="card">
+
+<span>People in Poverty</span>
+
+<strong id="poorPop">—</strong>
+
+<small id="poorYear">—</small>
+
+</div>
+
+
+<div class="card">
+
+<span>Change in Poverty Rate</span>
+
+<strong id="change">—</strong>
+
+<small id="changeType">—</small>
+
+</div>
+
+
+<div class="card">
+
+<span>Trend</span>
+
+<strong id="status">—</strong>
+
+<small id="statusDetail">—</small>
+
+</div>
+
+
+</section>
+
+
+<section class="chart-card">
+
+<h2>Poverty Rate Over Time</h2>
+
+<div class="chart-box">
+
+<canvas id="povertyChart"></canvas>
+
+</div>
+
+</section>
+
+
+<section class="chart-card">
+
+<h2>People Living in Poverty</h2>
+
+<div class="chart-box">
+
+<canvas id="peopleChart"></canvas>
+
+</div>
+
+</section>
+
+
+<section class="table-card">
+
+<h2>Historical Data</h2>
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Year</th>
+
+<th>Poverty Rate</th>
+
+<th>People in Poverty</th>
+
+<th>Source</th>
+
+</tr>
+
+</thead>
+
+<tbody id="dataTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="help-card">
+
+<h2>What Can We Do?</h2>
+
+<p>
+Poverty is a complex global issue. Helping reduce it
+requires education, employment opportunities,
+access to healthcare, infrastructure, social protection,
+and responsible community action.
+</p>
+
+<div class="help-grid">
+
+<div>
+
+<h3>📚 Education</h3>
+
+<p>
+Support access to quality education and learning
+opportunities.
+</p>
+
+</div>
+
+<div>
+
+<h3>💼 Employment</h3>
+
+<p>
+Support fair employment and opportunities for
+people to develop useful skills.
+</p>
+
+</div>
+
+<div>
+
+<h3>🏥 Basic Services</h3>
+
+<p>
+Support initiatives that improve access to healthcare,
+clean water and essential services.
+</p>
+
+</div>
+
+<div>
+
+<h3>🤝 Community Action</h3>
+
+<p>
+Volunteer, support responsible organizations and
+help communities in practical ways.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="source-card">
+
+<h2>Data & Methodology</h2>
+
+<p>
+
+<strong>Primary source:</strong>
+World Bank Poverty and Inequality Platform (PIP)
+
+</p>
+
+<p>
+
+<strong>Poverty line:</strong>
+$3.00 per person per day, 2021 PPP.
+
+</p>
+
+<p>
+
+The latest available observation differs between
+countries. The application displays the actual
+observation year instead of assuming that every
+country has data for the same year.
+
+</p>
+
+<p>
+
+<strong>Important:</strong>
+A later year can represent a World Bank estimate or
+nowcast rather than a household-survey observation.
+The app does not label every number as a survey result.
+
+</p>
+
+</section>
+
+
+<footer>
+
+<p>
+Global Poverty Tracker
+</p>
+
+<p>
+Data source: World Bank Poverty and Inequality Platform
+</p>
+
+</footer>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

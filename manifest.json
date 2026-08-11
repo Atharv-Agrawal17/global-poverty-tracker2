@@ -1,0 +1,16 @@
+{
+  "name": "Global Poverty Tracker",
+  "short_name": "Poverty Tracker",
+  "description": "A global poverty dashboard using World Bank Poverty and Inequality Platform data.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#172f50",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
